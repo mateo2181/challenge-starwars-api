@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from "urql";
 import { graphql } from '@/generated/gql';
 import { Planet } from '@/generated/graphql';

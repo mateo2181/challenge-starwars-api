@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from "urql";
 import { graphql } from '@/generated/gql';
 import Container from '@/components/UI/Container/Container';
+import Loading from "@/components/UI/Loading/Loading";
 import FilmsListByPerson from "./components/FilmsListByPerson/FilmsListByPerson";
 import styles from './PersonPage.module.scss';
-import Loading from "@/components/UI/Loading/Loading";
 
 const query = graphql(`
   query Person($id: ID) {
@@ -31,7 +31,7 @@ const query = graphql(`
 
 const PersonPage = () => {
 
-  let { personId } = useParams();
+  const { personId } = useParams();
 
   const [result] = useQuery({ query, variables: { id: personId } });
   const { data, fetching, error } = result;
@@ -48,9 +48,11 @@ const PersonPage = () => {
   useEffect(() => {
     const producersList: { [key: string]: number } = {};
     if (person?.filmConnection?.films) {
-      person?.filmConnection?.films.forEach((f: any) => {
-        f.producers.forEach((producer: string) => {
-          producersList[producer] = (producersList[producer] || 0) + 1;
+      person?.filmConnection?.films.forEach((f) => {
+        f?.producers?.forEach((producer) => {
+          if(producer) {
+            producersList[producer] = (producersList[producer] || 0) + 1;
+          }
         });
       });
     }
