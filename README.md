@@ -51,7 +51,7 @@ Download GraphQL Schema
 $ npm run download-schema
 ```
 
-Generate GraphQL Types (generated types will be in `src/generated/graphql.ts`
+Generate GraphQL Types (generated types will be in `src/generated/*`)
 
 ```bash
 $ npm run codegen

@@ -8,6 +8,7 @@
     "preview": "vite preview",
     "ts:check": "tsc",
     "codegen": "graphql-codegen",
+    "codegen:watch": "graphql-codegen --watch",
     "download-schema": "get-graphql-schema https://swapi-graphql.netlify.app/.netlify/functions/index > schema.graphql"
   },
   "dependencies": {
