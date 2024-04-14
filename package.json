@@ -7,13 +7,13 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "ts:check": "tsc",
-    "codegen": "graphql-codegen",
+    "codegen": "graphql-codegen --config codegen.ts",
     "codegen:watch": "graphql-codegen --watch",
     "download-schema": "get-graphql-schema https://swapi-graphql.netlify.app/.netlify/functions/index > schema.graphql",
     "eslint": "eslint --ext .ts,.tsx src/"
   },
   "dependencies": {
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
@@ -23,9 +23,9 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
-    "@graphql-codegen/cli": "^2.13.7",
-    "@graphql-codegen/client-preset": "^4.2.5",
-    "@graphql-codegen/typescript-operations": "^2.5.4",
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/client-preset": "4.2.5",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -38,6 +38,7 @@
     "eslint-plugin-react": "^7.34.1",
     "get-graphql-schema": "^2.1.2",
     "globals": "^15.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^4.9.5",
     "typescript-eslint": "^7.6.0",
     "vite": "^3.1.0"
